@@ -9,3 +9,8 @@ export const fetchIncidentById = (id) =>
 export const createIncident = (incident) =>
   api.post("/api/incidents", incident).then(res => res.data);
 
+export const updateIncident = (id, payload) =>
+  api.put(`/api/incidents/${id}`, payload);
+
+export const fetchIncidentTimeline = (id) =>
+  api.get(`/api/incidents/${id}/timeline`).then(res => res.data);
